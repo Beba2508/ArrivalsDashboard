@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arrivals Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="?tab=today">Današnji dolasci</a>
+    <a href="?tab=tomorrow">Sutrašnji dolasci</a>
+    <a href="?tab=stats">Statistika</a>
+  </nav>
+  <main>
+    <h1 id="tableTitle"></h1>
+
+    <div id="filters" style="text-align: center; margin-top: 1rem;">
+      <label>
+        Destination:
+        <select id="filterDestination"></select>
+      </label>
+      <label style="margin-left: 1rem;">
+        Done:
+        <select id="filterDone">
+          <option value="">All</option>
+          <option value="checked">✔</option>
+          <option value="unchecked">✖</option>
+        </select>
+      </label>
+      <label style="margin-left: 1rem;">
+        Entered:
+        <select id="filterEntered">
+          <option value="">All</option>
+          <option value="checked">✔</option>
+          <option value="unchecked">✖</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="table-wrapper" id="arrivalsSection">
+      <table id="arrivalsTable">
+        <thead>
+          <tr>
+            <th>Destination</th>
+            <th>Apartment</th>
+            <th>Done</th>
+            <th>eVisitor</th>
+            <th>Self</th>
+            <th>Messaging</th>
+            <th>Checkin</th>
+            <th>Code Check</th>
+            <th>Entered</th>
+            <th>Parking</th>
+            <th>Supervisor</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <div id="statsSection" style="display:none; padding: 2rem;">
+      <h1>📊 Statistika Dolazaka</h1>
+      <div class="stats-grid" id="statsContainer"></div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
