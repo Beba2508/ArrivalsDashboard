@@ -11,7 +11,7 @@ const apartmentsTomorrow = [
 ];
 
 const villas = ["VILLA MILLA", "VILLA MILA", "VILLA NIKA", "VILLA PRIMA", "VILLA LIDIJA", "VILLA TIE VIŽINADA", "VILLA SECONDA", "BRONZEES"];
-const sunny = ["AUDREY", "KANTRIDA", "CLOUD 9"];
+const sunny = ["AUDREY", "KANTRIDA", "CLOUD 9", "EVIE"];
 
 function getDestination(prefix) {
   const clean = prefix.replace(/\s*III|\s*II|\s*I/g, '').replace(/\s+/g, ' ').trim().toUpperCase();
@@ -115,6 +115,7 @@ function loadTable(data) {
       <td><textarea rows="1">${s.note || ""}</textarea></td>
     `;
     tbody.appendChild(row);
+    document.getElementById("rowCount").textContent = data.length;
   });
 
   document.querySelectorAll("input, select, textarea").forEach(el => {
