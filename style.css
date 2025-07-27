@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #2a2b3d, #1d1e2f);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  background-image: radial-gradient(#fff5 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: twinkle 4s infinite;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav a {
+  color: #ffc7f3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
+  color: #ffc7f3;
+}
+
+.table-wrapper {
+  max-height: 70vh;
+  overflow-y: auto;
+  margin: 2rem auto;
+  width: 95%;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background: rgba(174, 93, 181, 0.687);
+  backdrop-filter: blur(40px) saturate(180%);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  z-index: 10;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: scale(1.005);
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.4);
+  accent-color: #7bbf8b;
+}
+
+select, textarea, input[type="checkbox"] {
+  transition: all 0.2s ease-in-out;
+}
+
+select, textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+select:focus, textarea:focus {
+  outline: none;
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 0 0 2px #ffc7f3aa;
+}
+
+select option {
+  color: rgb(95, 6, 71);
+  background-color: white;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+/* Destination row backgrounds */
+.ZAGREB { background: linear-gradient(to right, #478dff33, transparent); }
+.CRA { background: linear-gradient(to right, #ffe06633, transparent); }
+.VILLAS { background: linear-gradient(to right, #00000062, transparent); }
+.SUNNY { background: linear-gradient(to right, #c9894d33, transparent); }
+.ROVINJ { background: linear-gradient(to right, #b941f533, transparent); }
+.DUBROVNIK { background: linear-gradient(to right, #58d68d33, transparent); }
+.BULLDOG\\ HG { background: linear-gradient(to right, #d980d049, transparent); }
+.BULLDOG\\ WG { background: linear-gradient(to right, #e9859e33, transparent); }
+.BEOGRAD { background: linear-gradient(to right, #a569bd33, transparent); }
+.BLUBINI { background: linear-gradient(to right, #85d1e033, transparent); }
+.BRAČ { background: linear-gradient(to right, #d5a6bd33, transparent); }
+.Praterstern { background: linear-gradient(to right, #f39c1233, transparent); }
+
+/* Stats cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.card h2 {
+  color: #ffc7f3;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card.total { background: linear-gradient(to right, #7f8c8d33, transparent); }
+.card.done { background: linear-gradient(to right, #2ecc7133, transparent); }
+.card.entered { background: linear-gradient(to right, #48c9b033, transparent); }
+.card.self { background: linear-gradient(to right, #e67e2233, transparent); }
+.card.villas { background: linear-gradient(to right, #00000033, transparent); }
+.card.zagreb { background: linear-gradient(to right, #5dade233, transparent); }
+.card.cra { background: linear-gradient(to right, #f7dc6f33, transparent); }
+.card.dubrovnik { background: linear-gradient(to right, #58d68d33, transparent); }
+.card.sunny { background: linear-gradient(to right, #ff6b8133, transparent); }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
